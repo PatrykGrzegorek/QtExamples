@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>chart.qml</file>
+        <file>chartWork.qml</file>
+    </qresource>
+</RCC>

@@ -4,6 +4,8 @@
 
 #include "mytimer.h"
 #include "chart.h"
+#include "stats.h"
+#include "heart.h"
 
 
 int main(int argc, char *argv[])
@@ -17,12 +19,16 @@ int main(int argc, char *argv[])
     //my Objects
     myTimer myTimer1;
     chart chart1;
+    stats stats1;
+    heart heart1;
 
     QQmlApplicationEngine engine;
 
     //connect my Objects to QML
     engine.rootContext()->setContextProperty("myTimer", &myTimer1);
     engine.rootContext()->setContextProperty("listValues", &chart1);
+    engine.rootContext()->setContextProperty("heart", &heart1);
+    engine.rootContext()->setContextProperty("stats", &stats1);
 
     //debuging lines
     QObject::connect(&myTimer1, &myTimer::timeChanged, [](QString stringTime) { qDebug() << "Time changed to " << stringTime; });

@@ -33,6 +33,8 @@ set(PROJECT_SOURCES
 
         mytimer.h mytimer.cpp
         chart.h chart.cpp
+        stats.h stats.cpp
+        heart.h heart.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

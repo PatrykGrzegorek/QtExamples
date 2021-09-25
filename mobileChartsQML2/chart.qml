@@ -3,20 +3,19 @@ import QtQuick.Controls 2.12
 import QtCharts 2.3
 
 Item {
-    width: 370
-    height: 250
-    x: window.width/2 - width/2
-    y: window.height/2 - height/2
     ChartView {
          id: chart_view
 
          title: "Stacked Bar series"
-         anchors.fill: parent
+         width: 370
+         height: 250
+         x: window.width/2 - width/2
+         y: window.height/2 - height/2
          legend.alignment: Qt.AlignBottom
          legend.visible: false
          antialiasing: true
          backgroundColor: "#05071b"
-        // animationOptions: ChartView.AllAnimations
+        animationOptions: ChartView.AllAnimations
 
          StackedBarSeries {
              barWidth: 1

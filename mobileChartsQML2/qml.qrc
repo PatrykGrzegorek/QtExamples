@@ -3,5 +3,9 @@
         <file>main.qml</file>
         <file>chart.qml</file>
         <file>chartWork.qml</file>
+        <file>buttonPause.qml</file>
+        <file>buttonStart.qml</file>
+        <file>buttonStop.qml</file>
+        <file>buttonFirstStart.qml</file>
     </qresource>
 </RCC>

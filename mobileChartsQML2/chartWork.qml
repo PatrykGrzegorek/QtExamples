@@ -3,20 +3,19 @@ import QtQuick.Controls 2.12
 import QtCharts 2.3
 
 Item {
-    width: 370
-    height: 250
-    x: window.width/2 - width/2
-    y: window.height/2 - height/2
     ChartView {
          id: chart_view
 
          title: "Stacked Bar series"
-         anchors.fill: parent
+         width: 370
+         height: 250
+         x: window.width/2 - width/2
+         y: window.height/2 - height/2
          legend.alignment: Qt.AlignBottom
          legend.visible: false
          antialiasing: true
          backgroundColor: "#05071b"
-        // animationOptions: ChartView.AllAnimations
+        animationOptions: ChartView.AllAnimations
 
          StackedBarSeries {
              barWidth: 1
@@ -26,7 +25,8 @@ Item {
                  gridVisible: false
                  minorGridVisible: false
                  visible: false
-                 max: listCount()
+                 min: listCount()
+                 max: listValues.count
              }
              axisY: ValueAxis {
                  lineVisible: false
@@ -41,42 +41,40 @@ Item {
              }
 
              BarSet {
+                 id: chart_barset_green
                  label: "Green"
                  color: "#28d16f"
                  borderWidth: 0
-                 values: getListGreen()
+                 values: []
              }
              BarSet {
+                 id: chart_barset_red
                  label: "Red"
                  color: "#df1730"
                  borderWidth: 0
-                 values: getListRed()
+                 values: []
              }
      }}
 
     function listCount(){
-        if(listValues.count > 3)
-            return 3;
-        return listValues.count
+        if(listValues.count !== 0)
+            update();
+        if(listValues.count > 5)
+            return listValues.count-5;
+        return 0
+
     }
 
-    function getListGreen(){
-        var listGreen = new Array(4);
-        if(listValues.count < 4)
-            return listValues.variantListValuesGreen;
-        for (var i = 0; i < 4; i++){
-            listGreen[i] = listValues.variantListValuesGreen[i+listValues.count-4];
-        }
-        return listGreen;
-    }
+    function update(){
 
-    function getListRed(){
-        var listRed = new Array(4);
-        if(listValues.count < 4)
-            return listValues.variantListValuesRed;
-        for (var i = 0; i < 4; i++){
-            listRed[i] = listValues.variantListValuesRed[i+listValues.count-4];
+        var p =listValues.listValues[listValues.count-1]
+        console.log("updated with: " + p)
+        if (p > 54) {
+            chart_barset_red.append(0)
+            chart_barset_green.append(p)
+        } else {
+            chart_barset_red.append(p)
+            chart_barset_green.append(0)
         }
-        return listRed;
     }
 }

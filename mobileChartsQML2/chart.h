@@ -18,7 +18,6 @@ class chart: public QObject
 public:
     explicit chart(QObject *parent = nullptr);
 
-
     QList<int> listValues();
     QList<QVariant> variantListValuesGreen();
     QList<QVariant> variantListValuesRed();

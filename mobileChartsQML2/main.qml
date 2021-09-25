@@ -7,7 +7,7 @@ ApplicationWindow {
     width: 350
     height: 600
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Humor")
 
     Rectangle{
         id: timer
@@ -21,55 +21,41 @@ ApplicationWindow {
         }
     }
 
+    Rectangle{
+        x: window.width/4 - width/2
+        y: 60
+        width: 100
+        height: 50
+        Text{
+        anchors.centerIn: parent
+        text: "Heart: " + heart.stringHeart
+        }
+    }
+
+    Rectangle{
+        x: 3*window.width/4 - width/2
+        y: 60
+        width: 100
+        height: 50
+        Text{
+        anchors.centerIn: parent
+        text: "Calories: " + stats.stringCalories
+        }
+    }
+
     Loader{
         id: chart
-        source: "chartWork.qml"
+        source: "chart.qml"
     }
 
-    Button{
-        x: window.width/4 - width/2
-        y: 3*window.height/4 - height/2
-        width: 80
-        height: 25
-        text: "START"
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                myTimer.clickStart()
-                listValues.clickStart()
-                chart.source="chartWork.qml"
-            }
-        }
+    Loader{
+        id: firstButton
+        source: "buttonFirstStart.qml"
     }
 
-    Button{
-        x: window.width/2 - width/2
-        y: 3*window.height/4 - height/2
-        width: 80
-        height: 25
-        text: "RESET"
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                myTimer.clickReset()
-                listValues.clickReset()
-            }
-        }
-    }
-
-    Button{
-        x: 3*window.width/4 - width/2
-        y: 3*window.height/4 - height/2
-        width: 80
-        height: 25
-        text: "STOP"
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                myTimer.clickStop()
-                listValues.clickStop()
-                chart.source ="chart.qml"
-            }
-        }
+    Loader{
+        active: false
+        id: secondButton
+        source: "buttonStop.qml"
     }
 }

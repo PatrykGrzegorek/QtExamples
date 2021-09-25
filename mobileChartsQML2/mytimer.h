@@ -24,7 +24,7 @@ public slots:
     void clickStart();
     void clickReset();
 private:
-    int m_s, m_m, m_h;
+    int m_hs, m_s, m_m, m_h;
     QString m_stringTime;
     QTimer *m_timer;
 };

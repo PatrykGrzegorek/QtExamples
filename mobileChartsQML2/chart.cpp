@@ -40,7 +40,7 @@ void chart::addValue(int value)
 void chart::changeListValues()
 {
     int value = rand() % 9 + 51;
-    if(value > 55){
+    if(value > 54){
         m_listValuesGreen.push_back(value);
         m_listValuesRed.push_back(0);
     }else{

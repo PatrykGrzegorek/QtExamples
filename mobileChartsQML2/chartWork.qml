@@ -59,8 +59,8 @@ Item {
     function listCount(){
         if(listValues.count !== 0)
             update();
-        if(listValues.count > 5)
-            return listValues.count-5;
+        if(listValues.count > 30)
+            return listValues.count-30;
         return 0
 
     }

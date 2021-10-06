@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("stats", &stats1);
 
     //debuging lines
-    QObject::connect(&myTimer1, &myTimer::timeChanged, [](QString stringTime) { qDebug() << "Time changed to " << stringTime; });
+    //QObject::connect(&myTimer1, &myTimer::timeChanged, [](QString stringTime) { qDebug() << "Time changed to " << stringTime; });
     QObject::connect(&chart1, &chart::listValuesChanged, [](int value) { qDebug() << "Add value " << QString::number(value); });
 
 

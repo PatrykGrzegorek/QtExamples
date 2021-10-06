@@ -7,5 +7,7 @@
         <file>buttonStart.qml</file>
         <file>buttonStop.qml</file>
         <file>buttonFirstStart.qml</file>
+        <file>chartAreaLineWork.qml</file>
+        <file>staticTestAreaLineChart.qml</file>
     </qresource>
 </RCC>

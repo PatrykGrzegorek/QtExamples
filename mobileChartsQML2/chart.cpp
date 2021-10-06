@@ -68,5 +68,5 @@ void chart::clickStart()
 void chart::clickReset()
 {
     m_listValues.clear();
-    addValue(0);
+    emit listValuesChanged(0);
 }

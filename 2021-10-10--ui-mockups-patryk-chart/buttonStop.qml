@@ -11,6 +11,8 @@ Item {
         MouseArea{
             anchors.fill: parent
             onClicked: {
+                timeStop = null
+                timeStop = new Date()
                 myTimer.clickStop()
                 listValues.clickStop()
                 stats.clickStop()

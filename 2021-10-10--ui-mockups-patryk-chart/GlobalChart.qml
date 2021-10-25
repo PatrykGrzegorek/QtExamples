@@ -2,13 +2,10 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtCharts 2.3
 import QtQuick.Controls.Material 2.12
-ApplicationWindow {
-    id: window
-    width: 350
-    height: 600
-    visible: true
-    title: qsTr("oxyMotion")
 
+Page {
+    property variant timeStart: null
+    property variant timeStop: null
     Rectangle{
         color: Material.background
         id: timer
@@ -34,7 +31,7 @@ ApplicationWindow {
         Text{
         color: Material.foreground
         anchors.centerIn: parent
-        text: "Heart: " + heart.stringHeart
+        text: "Heart: " + heart.stringHeart  + " "
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.right
@@ -54,7 +51,7 @@ ApplicationWindow {
         Text{
         color: Material.foreground
         anchors.centerIn: parent
-        text: "Calories: " + stats.stringCalories
+        text: "Calories: " + stats.stringCalories + " "
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.right

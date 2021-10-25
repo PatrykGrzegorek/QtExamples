@@ -5,7 +5,7 @@ import QtCharts 2.3
 Item {
     ChartView {
         id: chart_line
-        title: "Some some"
+        title: "Training"
         width: 370
         height: 250
         x: window.width/2 - width/2
@@ -13,7 +13,7 @@ Item {
         legend.alignment: Qt.AlignBottom
         legend.visible: false
         antialiasing: true
-        backgroundColor: "#05071b"
+        //backgroundColor: "#3F4FC7"
        animationOptions: ChartView.SeriesAnimations
 
         // Define x-axis to be used with the series instead of default one

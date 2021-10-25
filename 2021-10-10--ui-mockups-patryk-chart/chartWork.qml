@@ -29,6 +29,7 @@ Item {
                  min: listCount()
                  max: listValues.count
              }
+
              axisY: ValueAxis {
                  lineVisible: false
                  gridVisible: false
@@ -55,7 +56,8 @@ Item {
                  borderWidth: 0
                  values: []
              }
-     }}
+     }
+    }
 
     function listCount(){
         if(listValues.count !== 0)
@@ -69,7 +71,7 @@ Item {
     function update(){
 
         var p =listValues.listValues[listValues.count-1]
-        console.log("updated with: " + p)
+        //console.log("updated with: " + p)
         if (p > 54) {
             chart_barset_red.append(0)
             chart_barset_green.append(p)

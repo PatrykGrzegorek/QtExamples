@@ -6,7 +6,7 @@ Item {
         x: window.width/2 - width/2
         y: 3*window.height/4 - height/2
         width: 80
-        height: 25
+        height: 40
         text: "START"
         MouseArea{
             anchors.fill: parent

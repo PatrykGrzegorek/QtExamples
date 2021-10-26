@@ -3,7 +3,7 @@
 chart::chart(QObject *parent) : QObject(parent), m_timer { new QTimer(this) }
 {
     connect(m_timer, &QTimer::timeout, this, &chart::changeListValues);
-    m_timer->setInterval(1000);
+    m_timer->setInterval(100);
 }
 
 int chart::value(const int index) const{
@@ -13,6 +13,15 @@ int chart::value(const int index) const{
 QList<int> chart::listValues()
 {
     return m_listValues;
+}
+
+QList<QVariant> chart::variantListValues()
+{
+    QList<QVariant> variantValues;
+    for(int i = 0; i < this->count(); i++){
+        variantValues.push_back(m_listValues[i]);
+    }
+    return variantValues;
 }
 
 QList<QVariant> chart::variantListValuesGreen(){

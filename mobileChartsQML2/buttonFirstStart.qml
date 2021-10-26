@@ -22,6 +22,8 @@ Item {
                 firstButton.source="buttonPause.qml"
                 secondButton.active=true
                 secondButton.source="buttonStop.qml"
+                timeStart = null
+                timeStart = new Date()
             }
         }
     }

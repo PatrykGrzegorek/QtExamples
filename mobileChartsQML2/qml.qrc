@@ -7,11 +7,11 @@
         <file>buttonStart.qml</file>
         <file>buttonStop.qml</file>
         <file>buttonFirstStart.qml</file>
-        <file>chartAreaLineWork.qml</file>
-        <file>staticTestAreaLineChart.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>icons/calorie.svg</file>
         <file>icons/calories.png</file>
         <file>icons/heart.png</file>
+        <file>GlobalChart.qml</file>
+        <file>History.qml</file>
     </qresource>
 </RCC>
